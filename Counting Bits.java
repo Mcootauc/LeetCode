@@ -1,13 +1,13 @@
-public class Counting Bits {
-    class Solution {
-        public int hammingWeight(int n) {
-            // Time: O(k) k being the number of "set" bits, Space: O(1)
-            int sum = 0;
-            while (n > 0) {
-                n &= n - 1; // gets rid of least sig 1-bit 
-                sum++; // increments the sum after removing the least sig 1-bit
-            }
-            return sum;
+class Solution {
+    public int[] countBits(int n) {
+        // Time: O(n) Space: O(n)
+        int[] ans = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            // Remove i’s lowest‑set bit with (i & (i‑1)), look up its already‑computed bit‑count
+            // in ans[], and add 1 to re‑include the bit we just cleared—this gives the total
+            // number of 1‑bits in i in O(1) time.
+            ans[i] = ans[i & i - 1] + 1;
         }
+        return ans;
     }
 }
