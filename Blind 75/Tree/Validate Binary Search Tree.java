@@ -14,6 +14,10 @@
  * }
  */
 class Solution {
+    // Time: O(n)
+    // Loops through each node of the tree
+    // Space: O(h)
+    // max depth of the recursive calls are h height
     public boolean isValidBST(TreeNode root) {
         return valid(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
