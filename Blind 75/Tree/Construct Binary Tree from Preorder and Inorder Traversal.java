@@ -14,6 +14,10 @@
  * }
  */
 class Solution {
+    
+    // Time: O(n^2) because of the for loop call in each recursive call
+    // Space: O(h) h height for the depth of the tree
+
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         return helper(0, 0, inorder.length - 1, preorder, inorder);
     }
