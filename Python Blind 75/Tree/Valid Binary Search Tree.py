@@ -6,6 +6,7 @@
 #         self.right = right
 
 class Solution:
+    # Time: O(n), Space: O(n) DFS
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         return self.validateBST(root,  float("-inf"), float("inf"))
     
